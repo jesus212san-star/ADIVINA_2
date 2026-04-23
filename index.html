@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivina el Número</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Adivina el número</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎮 ADIVINA EL NÚMERO</h1>
-        <p>He pensado un número entre 1 y 100. ¿Crees poder adivinarlo?</p>
 
-        <input type="number" id="numeroInput" placeholder="Escribe un número" min="1" max="100">
-        
-        <div class="buttons">
-            <button id="btnComprobar">COMPROBAR</button>
-            <button id="btnReiniciar">REINICIAR JUEGO</button>
-        </div>
+  <div class="container">
+    <h1>Adivina el número</h1>
 
-        <div id="mensaje" class="mensaje">¡Empieza a jugar!</div>
+    <input type="number" id="numero" placeholder="Escribe un número">
+
+    <div class="botones">
+      <button onclick="comprobar()">Comprobar</button>
+      <button onclick="reiniciar()">Reiniciar</button>
     </div>
-<p>Jesús Sánchez Paredes Grupo: 602</p>
-    <script src="app.js"></script>
+
+    <p id="mensaje">Intenta adivinar...</p>
+  </div>
+<p>Jesus Sánchez Paredes Grupo: 602</p>
+  <script src="app.js"></script>
 </body>
 </html>
