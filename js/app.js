@@ -24,7 +24,7 @@ function comprobar() {
 }
 
 function reiniciar() {
-  numeroSecreto = Math.floor(Math.random() * 100) + 1;
+  numeroSecreto = Math.floor(Math.random() * 10) + 1;
   document.getElementById("numero").value = "";
   document.getElementById("mensaje").textContent = "Nuevo juego iniciado";
 }
