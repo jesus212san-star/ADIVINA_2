@@ -1,42 +1,31 @@
-// Generar número secreto aleatorio entre 1 y 100
 let numeroSecreto = Math.floor(Math.random() * 100) + 1;
 
-// Obtener elementos del HTML
-const input = document.getElementById('numeroInput');
-const btnComprobar = document.getElementById('btnComprobar');
-const btnReiniciar = document.getElementById('btnReiniciar');
-const mensaje = document.getElementById('mensaje');
+function comprobar() {
+  let input = document.getElementById("numero").value;
+  let numero = Number(input);
+  let mensaje = document.getElementById("mensaje");
 
-// Función para comprobar el número
-btnComprobar.addEventListener('click', () => {
-    const numeroUsuario = parseInt(input.value);
+  if (input === "") {
+    mensaje.textContent = "Escribe un número";
+    mensaje.style.color = "red";
+    return;
+  }
 
-    // Validar que sea un número correcto
-    if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 100) {
-        mensaje.textContent = "⚠️ Por favor, escribe un número válido entre 1 y 100.";
-        mensaje.style.color = "yellow";
-        return;
-    }
+  if (numero > numeroSecreto) {
+    mensaje.textContent = "El número es menor";
+    mensaje.style.color = "blue";
+  } else if (numero < numeroSecreto) {
+    mensaje.textContent = "El número es mayor";
+    mensaje.style.color = "blue";
+  } else {
+    mensaje.textContent = "¡ADIVINASTE!";
+    mensaje.style.color = "green";
+  }
+}
 
-    // Comparar
-    if (numeroUsuario === numeroSecreto) {
-        mensaje.textContent = "🎉 ¡ADIVINASTE! ¡Felicidades!";
-        mensaje.style.color = "#00ff00";
-    } 
-    else if (numeroUsuario < numeroSecreto) {
-        mensaje.textContent = "⬆️ El número es MAYOR";
-        mensaje.style.color = "#ffcc00";
-    } 
-    else {
-        mensaje.textContent = "⬇️ El número es MENOR";
-        mensaje.style.color = "#ff6b6b";
-    }
-});
-
-// Función para reiniciar el juego
-btnReiniciar.addEventListener('click', () => {
-    numeroSecreto = Math.floor(Math.random() * 100) + 1;
-    input.value = "";
-    mensaje.textContent = "🔄 Juego reiniciado. ¡Adivina el nuevo número!";
-    mensaje.style.color = "white";
-});
+function reiniciar() {
+  numeroSecreto = Math.floor(Math.random() * 100) + 1;
+  document.getElementById("numero").value = "";
+  document.getElementById("mensaje").textContent = "Nuevo juego iniciado";
+  document.getElementById("mensaje").style.color = "black";
+}
