@@ -1,4 +1,4 @@
-let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+let numeroSecreto = Math.floor(Math.random() * 10) + 1;
 
 function comprobar() {
   let input = document.getElementById("numero").value;
@@ -12,10 +12,10 @@ function comprobar() {
   }
 
   if (numero > numeroSecreto) {
-    mensaje.textContent = "El número es menor";
+    mensaje.textContent = "El número es mayor";
     mensaje.style.color = "blue";
   } else if (numero < numeroSecreto) {
-    mensaje.textContent = "El número es mayor";
+    mensaje.textContent = "El número es menor";
     mensaje.style.color = "blue";
   } else {
     mensaje.textContent = "¡ADIVINASTE!";
