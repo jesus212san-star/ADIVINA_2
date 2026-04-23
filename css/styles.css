@@ -1,41 +1,97 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
 }
 
-.recipiente {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin: 15px 0;
-  border-radius: 10px;
+/* CONTENEDOR PRINCIPAL */
+.recipiente{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:400px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:entrada 0.5s ease;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background: orange;
-  color: white;
-  cursor: pointer;
+/* ANIMACIÓN */
+@keyframes entrada{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 
-#mensaje {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
+/* TÍTULO */
+h1{
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+/* INPUT */
+input{
+    width:80%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    margin:15px 0;
+    text-align:center;
+    font-size:16px;
+}
+
+/* BOTONES */
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* HOVER BOTÓN */
+button:hover{
+    background:#1e40af;
+}
+
+/* BOTÓN REINICIAR */
+button:nth-child(2){
+    background:#ff9800;
+}
+
+button:nth-child(2):hover{
+    background:#e68900;
+}
+
+/* MENSAJE */
+#mensaje{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* CRÉDITOS */
+.creditos{
+    margin-top:15px;
+    font-size:14px;
+    color:white;
+    text-align:center;
 }
