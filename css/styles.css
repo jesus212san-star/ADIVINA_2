@@ -8,18 +8,13 @@ body {
   height: 100vh;
 }
 
-.container {
+.recipiente {
   background: white;
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-h1 {
-  color: #333;
 }
 
 input {
@@ -27,7 +22,6 @@ input {
   padding: 10px;
   margin: 15px 0;
   border-radius: 10px;
-  border: 1px solid #ccc;
 }
 
 button {
@@ -37,12 +31,7 @@ button {
   border-radius: 10px;
   background: orange;
   color: white;
-  font-weight: bold;
   cursor: pointer;
-}
-
-button:hover {
-  background: darkorange;
 }
 
 #mensaje {
