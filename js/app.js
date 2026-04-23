@@ -11,15 +11,24 @@ function comprobar() {
     return;
   }
 
-  if (numero > numeroSecreto) {
-    mensaje.textContent = "El número es mayor";
-    mensaje.style.color = "blue";
-  } else if (numero < numeroSecreto) {
-    mensaje.textContent = "El número es menor";
-    mensaje.style.color = "blue";
-  } else {
+  // Si adivina
+  if (numero === numeroSecreto) {
     mensaje.textContent = "¡ADIVINASTE!";
     mensaje.style.color = "green";
+
+  // Si está entre 1 y 5
+  } else if (numero >= 1 && numero <= 5) {
+    mensaje.textContent = "El número es MENOR";
+    mensaje.style.color = "blue";
+
+  // Si está entre 6 y 10
+  } else if (numero >= 6 && numero <= 10) {
+    mensaje.textContent = "El número es MAYOR";
+    mensaje.style.color = "blue";
+
+  } else {
+    mensaje.textContent = "Escribe un número del 1 al 10";
+    mensaje.style.color = "red";
   }
 }
 
@@ -27,4 +36,5 @@ function reiniciar() {
   numeroSecreto = Math.floor(Math.random() * 10) + 1;
   document.getElementById("numero").value = "";
   document.getElementById("mensaje").textContent = "Nuevo juego iniciado";
+  document.getElementById("mensaje").style.color = "black";
 }
